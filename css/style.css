@@ -1,0 +1,1064 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-color : #88728F;
+    --altr-color: #CFB5D6;
+    --third-color: #E1D1E6;
+    --forth-color: #C3C7F3;
+    --main-transition : 0.3s;
+    --main-section-back: #ececec;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Cairo", sans-serif;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/* header styling */
+header{
+    padding: 35px 20px;
+    background: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: height 0.3s ease;
+    height: 100px; 
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+header.shrink{
+    height: 50px;
+    background-color: var(--main-color);
+}
+header.shrink.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+header.shrink .wrapper .logo I::before{
+    color: var(--forth-color);
+}
+header.shrink .wrapper .logo h1{
+    color: var(--forth-color);
+}
+header.shrink .wrapper .list ul li a{
+    color: var(--forth-color);
+}
+header.shrink .wrapper .list ul li span{
+    color: var(--forth-color);
+}
+header.shrink .wrapper  .list ul .nested_list i::before{
+    color: var(--forth-color);
+}
+header.shrink .wrapper .last button{
+    background-color: var(--forth-color);
+    color: var(--main-color);
+}
+header.shrink .wrapper .last button:hover{
+    background-color: var(--main-color);
+    color: var(--forth-color);
+    border: 1px solid var(--forth-color);
+
+}
+header.shrink .wrapper .last i::before{
+    color: var(--forth-color);
+}
+
+header .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 90px;
+}
+.wrapper .logo a{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.wrapper .logo i{
+  width: 30px;
+  height: 30px;
+
+}
+.wrapper .logo i::before{
+    content: "\f2e7";
+    font-size: 40px;
+    color: var(--main-color);
+}
+.wrapper .logo h1{
+    color: var(--main-color);
+    font-family: cursive;
+    font-size: 25px;
+}
+.wrapper .list{
+    display: flex;
+}
+
+.wrapper .list ul{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    list-style-type: none;
+}
+.wrapper .list ul li a,span{
+    font-size: 15px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+.wrapper .list ul .nested_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.wrapper .list ul .nested_list:hover i{
+    transform: rotate(180deg);
+}
+.wrapper .list ul .nested_list i{
+    transition: 0.3s;
+}
+.wrapper .list ul .nested_list i::before{
+    cursor: pointer;
+    color: var(--main-color);
+    font-size: 10px;
+}
+.wrapper .list ul .nested_list:hover .disappear{
+    opacity: 1;
+    z-index: 100;
+    top:80px ;
+}
+.wrapper .list .second_list{
+    /* display: none; */
+    position: absolute;
+    top: 0px;
+    right: -40px;
+    width: 130px;
+    height: fit-content;
+    
+
+    border-radius:10px ;
+    transition: 0.3s;
+}
+
+.wrapper .list .second_list .disappear{
+   display: block;
+   background-color: var(--main-section-back);
+   border-radius: 10px;
+   z-index: -1;
+   opacity: 0;
+   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+   top: -100px;
+   transition: 0.3s;
+}
+
+.wrapper .list .second_list .disappear li{
+    color: var(--main-color);
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    font-size: 15px;
+}
+.wrapper .list .second_list .disappear li:hover{
+    background-color: var(--forth-color);
+    border-radius: 10px;
+}
+.wrapper .last{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper .last button{
+    height: 40px;
+    width: 80px;
+    color: var(--forth-color);
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--main-color);
+    cursor: pointer;
+    transition: 0.6s;
+}
+.wrapper .last button:hover{
+    background-color: var(--forth-color);
+    color:var(--main-color) ;
+    transition: 0.6s ;
+    border: 1px solid var(--main-color);
+}
+.wrapper .last .flags{
+    display: flex;
+    gap: 2vh;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.wrapper .last .flags ul{
+    list-style-type: none;
+    position : relative;
+    transition: 0.3s;
+}
+.wrapper .last .flags ul li{
+    transition: 0.3s;
+}
+.wrapper .last .flags ul li .uk{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: -100px;
+    transition: 0.3s;
+}
+.wrapper .last .flags ul li img.dropdown{
+    top: 30px;
+}
+.wrapper .last .flags img{
+    width: 30px;
+    height: 20px;
+    transition: 0.3s;
+}
+.wrapper .last i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.wrapper .last i::before{
+    font-size: 12px;
+    color: var(--main-color);
+
+}
+.wrapper .last i.rotate {
+    transform: rotate(180deg);
+}
+/* header styling End */
+.container{
+    position: relative;
+}
+/* first section start */
+.container .sectionOne{
+    /* background-image: url("../Html,Css,JS/images/gradientBackground.jpg");
+    background-position: center; */
+    background-color: var(--main-section-back);
+    width: 100%;
+    height: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    justify-content: center;
+    padding: 0 40px;
+}
+.container .sectionOne .detailSection{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 500px;
+}
+.container .sectionOne .detailSection h1{
+    color: var(--altr-color);
+    font-family: "Anton", sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+.container .sectionOne .detailSection h3{
+    color: var(--third-color);
+
+}
+.container .sectionOne .buttons{
+    display: flex;
+    gap: 10px;
+}
+.container .sectionOne button{
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.4s;
+}
+.container .sectionOne .buttons .btn1{
+    width: 200px;
+    height: 40px;
+    color: var(--forth-color);
+    background-color:var(--main-color) ;
+
+}
+.container .sectionOne .buttons .btn1:hover{
+    border: 1px solid var(--main-color);
+    background: none;
+    color: var(--main-color);
+
+}
+.container .sectionOne .buttons .btn2{
+    width: 250px;
+    height: 40px;
+    background-image: linear-gradient(to right, var(--forth-color)1%, var(--main-color)) ;
+    color: white;
+}
+.container .sectionOne .buttons .btn2:hover{
+    opacity: 0.5;
+}
+.container .sectionOne .imgLabSection{
+    width: 500px;
+    height: 400px;
+
+}
+.container .sectionOne .buddy{
+    width: 700px;
+    height: 820px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.container .sectionOne .buddy .buddyImg{
+    max-width: 100%;
+    width: 65%;
+    height: 40%;
+    max-height: 100%;
+}
+.container .sectionOne .imgLabSection img{
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+/* fisrt section end  */
+/* second section start */
+.container .sectionTwo{
+    width: 100%;
+    height: 400px;
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.container .sectionTwo h1{
+    color: var(--forth-color);
+    font-size: 30px;
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    
+}
+.container .sectionTwo .list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20%;
+    width: 500px;
+}
+.container .sectionTwo .buddy{
+    gap: 30%;
+}
+.container .sectionTwo .list .listElement{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.container .sectionTwo .list .listElement:hover{
+    transform: translateY(-10px);
+}
+.container .sectionTwo .list .listElement .icon {
+    border-radius: 50%;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ffe2ab;
+}
+.container .sectionTwo .list .listElement .icon img{
+    width: 40px;
+    height: 40px;
+}
+.container .sectionTwo .list .listElement .icon i::before{
+    /* content: "\f2e7 \f07a"; */
+    font-size: 36px;
+    color: #ffe2ab;
+}
+.container .sectionTwo .list .listElement h5{
+    color: var(--third-color);
+}
+.container .sectionTwo .list .listElement p{
+    font-weight: bold;
+    font-size: 15px;
+    color: var(--forth-color);
+}
+.container .sectionTwo .list .fisrt{
+
+}
+/* second section end */
+
+/* third section start   */
+.container .sectionThree{
+    width: 100%;
+    height: fit-content;
+    background-image: linear-gradient(to right, var(--forth-color),var(--third-color) ,var(--main-color)) ;
+    padding: 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container .sectionThree .detailSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    gap: 100px;
+}
+.container .sectionThree .detailSection .texts{
+    width: 450px;
+}
+.container .sectionThree .detailSection .texts h1{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 40px;
+    color: #163065;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+.container .sectionThree .detailSection .texts p{
+    color: #4f4f4f;
+    font-size: 15px;
+}
+.container .sectionThree .detailSection .numbers{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 10px;
+    width: 400px;
+}
+.container .sectionThree .detailSection .numbers .numberElement{
+    padding: 20px 10px;
+    color: #163065;
+}
+.container .sectionThree .detailSection .numbers .numberElement h1{
+    font-size: 40px;
+    color: #dadada;
+}
+.container .sectionThree .detailSection .numbers .numberElement h5{
+    color: #535353;
+}
+.container .sectionThree .iconsSection{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.container .sectionThree .iconsSection img{
+    width: 150px;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+/* third section end   */
+/* firth section start */
+.container .sectionFour{
+    width: 100%;
+    height: 900px;
+    background-color: var(--main-section-back);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+.container .sectionFour .imgSide{
+    width: 500px;
+    height: 600px;
+}
+.container .sectionFour .imgSide img{
+    max-width: 100%;
+    border-radius: 5px;
+}
+.container .sectionFour .detailSide{
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 0px;
+}
+.container .sectionFour .detailSide h1{
+    letter-spacing: -2px;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.container .sectionFour .detailSide p{
+    font-size: 20px;
+    color: gray;
+    letter-spacing: 1px;
+}
+.container .sectionFour .detailSide .buttons{
+    display: flex;
+        align-items: center;
+        padding: 10px 0px;
+        padding: 15px 0px;
+        gap: 10px;
+}
+.container .sectionFour .detailSide .buttons button{
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0b759d;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+.container .sectionFour .detailSide .buttons button:hover{
+    opacity: 0.3;
+}
+.container .sectionFour .detailSide .buttons a{
+    color: #0b759d;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.container .sectionFour .detailSide .buttons a:hover{
+    color: gray;
+
+}
+/* forth section end */
+/* fifth section start */
+.container .sectionFive{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: var(--altr-color);
+}
+.container .sectionFive .detailSide{
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.container .sectionFive .detailSide h1{
+    letter-spacing: -2px;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--third-color);
+}
+.container .sectionFive .detailSide p{
+    font-size: 15px;
+    color: var(--third-color);
+    letter-spacing: 1px;
+}
+.container .sectionFive .detailSide .buttons{
+    display: flex;
+        align-items: center;
+        padding: 10px 0px;
+        padding: 15px 0px;
+        gap: 10px;
+}
+.container .sectionFive .detailSide .buttons button{
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--third-color);
+    color: var(--main-color);
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.container .sectionFive .detailSide .buttons button:hover{
+    opacity: 0.3;
+}
+.container .sectionFive .detailSide .buttons a{
+    color: var(--third-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.container .sectionFive .detailSide .buttons a:hover{
+    color: var(--third-color);
+
+}
+.container .sectionFive .imgSide{
+    width: 500px;
+    height: 600px;
+}
+.container .sectionFive .imgSide img{
+    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+}
+/* fifth section end */
+/* sixth section start */
+.container .sectionSix{
+    width: 100%;
+    height: fit-content;
+    padding: 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:var(--main-section-back);
+    padding: 40px 0;
+    gap: 150px;
+
+}
+.container .sectionSix .topSide{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    gap: 100px;
+}
+.container .sectionSix .topSide .imgSide{
+    width: 500px;
+    height: 600px;
+}
+.container .sectionSix .topSide .imgSide img{
+    max-width: 100%;
+}
+.container .sectionSix .topSide .detailSide{
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 0px;
+}
+.container .sectionSix .topSide .detailSide h1{
+    letter-spacing: -2px;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+.container .sectionSix .detailSide p{
+    font-size: 20px;
+    color: gray;
+    letter-spacing: 1px;
+}
+.container .sectionSix .detailSide .buttons{
+    display: flex;
+        align-items: center;
+        padding: 10px 0px;
+        padding: 15px 0px;
+        gap: 10px;
+}
+.container .sectionSix .detailSide .buttons button{
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+.container .sectionSix .detailSide .buttons button:hover{
+    opacity: 0.3;
+}
+.container .sectionSix .detailSide .buttons a{
+    color: var(--main-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.container .sectionSix .detailSide .buttons a:hover{
+    color: gray;
+
+}
+.container .sectionSix .centerSide{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+}
+.container .sectionSix .centerSide h1{
+    letter-spacing: -2px;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.container .sectionSix .centerSide p{
+    font-size: 15px;
+    color: rgb(12, 12, 12);
+    letter-spacing: 1px;
+}
+.container .sectionSix .centerSide .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.container .sectionSix .centerSide .buttons button{
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    color: var(--main-color);
+    background-color: #dadada;
+    transition: 0.4s;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
+.container .sectionSix .centerSide .buttons  .two{
+    width: 150px;
+}
+.container .sectionSix .centerSide .buttons button:hover{
+    background-color:var(--main-color) ;
+    color: white;
+}
+.container .sectionSix .centerSide .contactSection{
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+.container .sectionSix .centerSide .contactSection .namesInput{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+.container .sectionSix .centerSide .contactSection ::placeholder{
+    color: var(--forth-color);
+}
+.container .sectionSix .centerSide .contactSection input{
+    width: 100%; 
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--main-color);
+    padding: 20px;
+    color: var(--forth-color);
+}
+.container .sectionSix .centerSide .contactSection input:focus {
+    border: none;
+}
+.container .sectionSix .centerSide .contactSection textarea{
+    width: 100%; 
+    height: 120px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--main-color);
+    padding:20px;
+    color: var(--forth-color);
+}
+.container .sectionSix .centerSide .contactSection button{
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    text-transform: uppercase;
+    background-color: var(--third-color);
+    color: var(--forth-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.container .sectionSix .centerSide .contactSection button:hover{
+    transform: scale(1.1);
+}
+.container .sectionSix .imgSlider{
+    width: 85%;
+    position: relative;
+    height: 300px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: pink;
+    transition: 0.3s;
+}
+.container .sectionSix .imgSlider .imgElement{
+    width: calc(33.33% - 40px);
+    height: 230px;
+    background-color: black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 8px;
+    transition: 0.3s;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    margin-top: -22px;
+    padding: 10px;
+    color: #565656;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.prev{
+    left: 0;
+}
+.next {
+    right: 0px;
+    border-radius: 3px 0 0 3px;
+}
+.container .sectionSix .imgSlider .imgElement .top{
+    /* background-color: orange; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container .sectionSix .imgSlider .imgElement .top .stars i::before{
+    color: orange;
+}
+.container .sectionSix .imgSlider .imgElement .top .logo{
+    width: 20px;
+    height: 20px;
+}
+.container .sectionSix .imgSlider .imgElement .top .logo img{
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+}
+.container .sectionSix .imgSlider .imgElement .center{
+    overflow-y:hidden ;
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 120px;
+}
+.container .sectionSix .imgSlider .imgElement .bottom{
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+    display: flex;
+    gap: 10px;
+}
+.container .sectionSix .imgSlider .imgElement .bottom img{
+    width: 50px;
+    height: 100%;
+    border-radius: 50%;
+}
+.container .sectionSix .imgSlider .imgElement .bottom h1{
+    color: var(--forth-color);
+    font-size: 15px;
+}
+.container .sectionSix .imgSlider .imgElement .bottom p{
+    font-size: 12px;
+}
+/* sixth section end */
+/* last section start */
+.container .lastSection{
+    width: 100%;
+    height: 600px;
+    background-image: linear-gradient(to bottom, var(--main-color), rgb(26, 0, 31) );
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px;
+}
+.container .lastSection .footerInfo{
+    display: flex;
+    gap: 300px;
+}
+.container .lastSection .logo a{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.container .lastSection .logo i{
+    width: 50px;
+    height: 50px;
+  
+  }
+  .container .lastSection .logo i::before{
+      content: "\f2e7";
+      font-size: 64.72px;
+      color: var(--forth-color);
+  }
+  .container .lastSection .logo h1{
+      color: var(--forth-color);
+      font-family: cursive;
+      font-size: 40px;
+  }
+.container .lastSection .info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.container .lastSection .info .infoElement{
+    text-align: center;
+}
+.container .lastSection .info .infoElement h1{
+    color: var(--main-section-back);
+    margin-bottom:20px ;
+}
+.container .lastSection .info .infoElement p{
+    color: var(--forth-color);
+}
+.lastSection .footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+   
+}
+.lastSection .footer h1{
+    margin: 10px 0;
+    font-size: 15px;
+    color: #747474;
+}
+.lastSection .footer::before{
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: #7f8ed94d;
+    position: absolute;
+    left: 0;
+}
+/* last section end */
+/* LOGIN PAGE START*/
+.loginPage{
+    margin-top: 20px;
+    background-image: linear-gradient(to right, var(--main-color),var(--third-color) );
+}
+.LoginContainer{
+    position: relative;
+    margin: 0 auto;
+    width: 450px;
+    height: 549px;
+    overflow-y: initial;
+    overflow-x: hidden;
+    padding-top: 20px;
+    background-color: var(--main-section-back);
+    border-radius: 5px;
+}
+.LoginContainer .Login{
+
+    width: 450px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-radius: 5px;
+
+}
+.LoginContainer .logo{
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.LoginContainer .logo i::before{
+    font-size: 35px;
+    color: var(--main-color);
+    transform: rotate(180deg);
+}
+.LoginContainer h1{
+    color: var(--main-color);
+    font-family: fantasy;
+    font-weight: 500;
+}
+.LoginContainer h3{
+    font-size: 20px;
+    color: var(--third-color);
+    font-weight: 500;
+    font-family: cursive;
+}
+.languages {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 30px;
+
+}
+.languages .element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    gap: 5px;
+}
+.languages .element.current {
+    border: 1px solid black;
+}
+.languages .element img{
+    max-width: 100%;
+}
+.languages .element>p{
+    color: var(--main-color);
+    font-size: 15px;
+}
+.LoginContainer .inputs{
+    display: flex;
+        width: 90%;
+        flex-direction: column;
+        gap: 30px;
+}
+.LoginContainer .inputs input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background: none;
+    padding: 15px;
+}
+.LoginContainer .inputs input::placeholder{
+
+}
+.LoginContainer button{
+    width: 90%;
+    height: 40px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, var(--main-color), var(--forth-color));
+
+}
+.LoginContainer .check{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    gap: 5px;
+}
+.LoginContainer a{
+    color: var(--main-color);
+    font-size: 12px;
+}
+/* LOIN PAGE END */
